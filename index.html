@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Linked List Visualization</title>
+
+    <link rel="stylesheet" href="vendor/normalize.css" />
+    <link rel="stylesheet" href="vendor/css/font-awesome.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <link 
+		href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" 
+		rel="stylesheet"
+    />
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="menu-icon">
+                <i class="fa fa-bars" aria-hidden="true" id="menu-btn"></i>
+            </div>
+
+            <div class="header-text">
+                <h1 id="header-h1">Linked <span>List</span> Visualization</h1>
+            </div>
+            <div class="theme-switcher">
+                <i class="fa fa-adjust" id="theme-icon" aria-hidden="true"></i>
+            </div>
+        
+        </div>
+        <div class="gradient-line">
+    </header>
+    
+    <main>
+        <div class="list" id="list">
+        </div>
+        <div class="error" id ="error">
+            <i class="fas fa-exclamation-circle error-message" id="exclamation"></i>
+           <p class="error-message" id="errorTxt">Error example-</p>
+        </div>
+        
+        <!-- Settings -->
+        <div id="settings">
+            <div class="after-click">
+                <i class="fas fa-times" id="close-btn"></i>
+           </div>
+    
+           <h2 class="principal">Settings</h2>
+    
+           <div class="main-menu">
+           <p class="node-timeOut">Node Animation Speed:</p>
+           <input id="node-input" type="number" placeholder="Miliseconds">
+           <p class="pointer-timeOut">Pointer Animation Speed:</p>
+           <input id="pointer-input" type="number" placeholder="Miliseconds">
+           <p class="delete-timeOut">Delete Animation Speed:</p>
+           <input id="delete-input" type="number" placeholder="Miliseconds">
+           </div>
+
+            <div class="error-advert">
+                <p id="settings-error"></p>
+            </div>
+
+            <div class="success">
+                <p id="succes"></p>
+            </div>
+
+           <button class="save" id="save">Save</button>
+           <button class="reset" id="reset">Reset</button>
+        </div>
+
+        <!-- operations -->
+
+        <section class="operations">
+            <div class="wrapper" id ="wrapper">
+                <div class="select">
+                    <button class="button" id="set-btn">Set</button>
+                    <input type="number" placeholder="Index" />
+                    <input type="number" placeholder="Data" />
+                </div>
+
+                <div class="select">
+                    <button class="button" id="insert-btn">Insert</button>
+                    <input type="number" placeholder="Index" />
+                    <input type="number" placeholder="Data" />
+                </div>
+
+                <div class="select">
+                    <button class="button" id="add-btn">Add</button>
+                    <input type="number" placeholder="Data" />
+                </div>
+
+                <div class="select">
+                    <button class="button" id="remove-btn">Remove</button>      
+                    <input type="number" placeholder="Index" /> 
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="vendor/js/fontawesome.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/LinkedList.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="vendor/js/fontawesome.js"></script>
+
+</body>
+</html>

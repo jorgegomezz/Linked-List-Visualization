@@ -1,0 +1,524 @@
+
+body {
+    background-color: rgb(25, 25, 25);
+    transition: all .6s ease;
+}
+
+/*
+Header
+*/
+
+.header-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1.5fr 9fr 1.5fr;
+    place-items: center;
+    text-align: center;
+}
+
+.header-container h1 {
+    color: #fff;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.header-container h1 span {
+    font-family: 'Montserrat', 'sans-serif';
+    color:#8900e8;
+    font-style: italic;
+}
+
+.gradient-line {
+    height: 1.5px;
+    width: 90%;
+    margin: 0 auto;
+    background: linear-gradient(to right, #0067ff, #8900e8);
+}
+
+.menu-icon svg {
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    font-weight: lighter;
+
+}
+
+.theme-switcher svg {
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    font-weight: lighter;
+}
+
+
+
+.list {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 60px;
+    margin-top: 25px;
+}
+
+.error {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    height: 35px;
+    
+}
+.node {
+    background:#8900e8;
+    width: 65px;
+    height: 65px;;
+    text-align: center;
+    border-radius: 50%;
+    /* animation-name: grow;
+    animation-duration: 2000ms; */
+    
+}
+
+div.node {
+    background:#8900e8;
+    /*width: var(--nodes-size);
+    height: var(--nodes-size);*/
+    text-align: center;
+    border-radius: 50%;
+    
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes highlightNode {
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes deleteNode {
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes moveLeftNode{
+    0%{
+        transform: translateX(200%);
+    }
+    70%{
+        transform: translateX(250%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes moveRightNode{
+    from{
+        transform: translateX(250%);
+    }
+    to{
+        transform: translateX(200%);
+
+    }
+}
+
+
+/* ----------------------------------------------------------------- */
+/* Error */
+/* ----------------------------------------------------------------- */
+
+section.error {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.error-message {
+    font-family: 'Livvic', sans-serif;
+    color: rgb(218, 23, 23);
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0 auto;
+    position: static;
+    margin-left: 30px;
+    margin-top: -19.5px;
+    opacity: 0;
+}
+
+
+
+#exclamation, #exclamation2 {
+    padding-left: 6px;
+    font-size: 21px;
+    color: rgb(218, 23, 23);
+    margin: 0 auto;
+    opacity: 0;
+}
+
+/* ----------------------------------------------------------------- */
+/* Settings */
+/* ----------------------------------------------------------------- */
+
+#settings{
+    margin: 0 auto; 
+    width: 400px;
+    left: -400px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(50, 50, 50);
+    transition: all .6s ease;
+    text-align: center;
+    display: block;
+    z-index: 1;
+}
+#settings.clicked{
+    left: 0;
+}
+
+#settings input {
+    width: 75%;
+    height: 22px;
+}
+
+.principal{
+    display: block;
+    color: white;
+    font-family: "Livvic", sans-serif;
+    font-size: 1.5em;
+    width: 40%;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 7px;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 20px;
+    
+}
+
+.node-timeOut{
+    color: white;
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.pointer-timeOut{
+    color: white;
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.delete-timeOut {
+    color: white;
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+
+
+#close-btn{
+    color: #8900e8;
+    font-size: 15px;
+    /*margin-left: 185px;*/
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.save{
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 0;
+    height: 32px;
+    width: 35%;
+    margin: 10px auto 0 auto;
+    background: linear-gradient(to right, #0067ff, #8900e8);
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Livvic", sans-serif;
+    margin-top: 80px;
+    transition: transform .3s;
+    padding-right: 5px;
+}
+
+.reset {
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 0;
+    height: 32px;
+    width: 35%;
+    margin: 10px auto 0 auto;
+    background: linear-gradient(to right, #ff002b, #9f0000);
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Livvic", sans-serif;
+    margin-top: 80px;
+    transition: transform .3s;
+    padding-left: 10px;
+}
+
+.save:hover{
+    transform: scale(1.09);
+}
+
+.reset:hover{
+    transform: scale(1.09);
+}
+
+div.success, div.error-message {
+    font-family: 'Livvic', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 30px;
+    height: 32px;
+}
+
+div.error-message {
+    color: rgb(218, 23, 23);
+}
+
+div.success {
+    color: green;
+}
+
+div.error-message p {
+    margin: 0;
+}
+
+/* ----------------------------------------------------------------- */
+/* Number */
+/* ----------------------------------------------------------------- */
+
+div.node p.number {
+    margin: 0;
+    line-height: 65px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: #fff;
+}
+
+
+
+@keyframes fadeNumberOut {
+    70% {
+        transform: scale(1.7);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes fadeNumberIn {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.7);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ----------------------------------------------------------------- */
+/* Pointer */
+/* ----------------------------------------------------------------- */
+
+div.pointer {
+    position: relative;
+    width: 70px;
+    height: 65px;
+    z-index: -1;
+    padding-left: 5px;
+
+}
+
+div.pointer img {
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-100%);
+    }
+    80% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes highlightPointer {
+    33% {
+        transform: rotate(10deg);
+    }
+    66% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes deletePointer {
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+/* ----------------------------------------------------------------- */
+/* Operations */
+/* ----------------------------------------------------------------- */
+
+section.operations {
+    position: fixed;
+    bottom: 5%;
+    width: 100%;
+}
+
+div.wrapper {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(120px, auto);
+    text-align: center;
+}
+
+div.wrapper p, div.wrapper input, div.wrapper button {
+    font-family: Arial, sans-serif;
+    width: 80%;
+}
+
+div.wrapper p {
+    margin: 10px auto 4px auto;
+    color: #fff;
+}
+
+div.wrapper input {
+    padding: 5px;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+div.wrapper input::placeholder {
+    font-style: italic;
+}
+
+/* ----------------------------------------------------------------- */
+/* Buttons */
+/* ----------------------------------------------------------------- */
+
+button.button {
+    border: none;
+    background: linear-gradient(-125deg,  #0067ff, #8900e8);
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+button.button:hover {
+    transform: scale(1.03);
+}
+
+/* ----------------------------------------------------------------- */
+/* Remove Button */
+/* ----------------------------------------------------------------- */
+
+
+
+div.remove:hover {
+    transform: scale(1.03);
+}
+
+button#remove-btn {
+    width: 80%;
+    background: linear-gradient(to right, #ff002b, #9f0000);
+}
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* Errors */
+/* ----------------------------------------------------------------- */
+
+section.errors {
+    width: 90%;
+    margin: 0 auto;
+}
+
+div.success, div.error-message {
+    font-family: 'Livvic', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 30px;
+    height: 32px;
+}
+
+div.error-message {
+    color: rgb(218, 23, 23);
+}
+
+.error-advert {
+    color: rgb(218, 23, 23);
+    font-family: 'Livvic', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 30px;
+    height: 32px;
+}
+
+div.success {
+    color: green;
+}
+
+div.error-message p {
+    margin: 0;
+}
